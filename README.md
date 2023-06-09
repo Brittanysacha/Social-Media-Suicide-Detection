@@ -1,9 +1,46 @@
 # Project Outline: Identifying and Understanding Suicidal Posts in Mental Health Subreddits using Natural Language Processing
 
-1. Research Question: How can natural language processing and machine learning enhance the identification of potential suicidal posts in mental health subreddits on Reddit, and what insights can be gained from their analysis?
+**Research Question:** How can natural language processing and machine learning techniques be utilised to identify and analyse potential suicidal ideation in mental health subreddits on Reddit? What insights can be extracted from this analysis to contribute to clinical research on user well-being?
 
 ## Introduction
 The objective of this project is to conduct an unsupervised study on Reddit data from various mental health subreddits. The primary aim is to identify potential suicidal posts using natural language processing techniques, with a specific focus on incorporating BERT (Bidirectional Encoder Representations from Transformers) while also leveraging Word Embeddings, TF-IDF Weighted Word2Vec, and Multinomial Naive Bayes. The models will be further optimized using Optuna Bayesian hyperparameter tuning.
+
+## Table of Contents
+- [Data Gathering and Pre-processing](#data-gathering-and-pre-processing)
+  - [1.1 Data Scraping](#11-data-scraping)
+  - [1.2 Data Cleaning](#12-data-cleaning)
+- [Database Initialization](#database-initialization)
+  - [2.1 Gather Connection Details](#21-gather-connection-details)
+  - [2.2 Establish a Connection](#22-establish-a-connection)
+- [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
+  - [3.1 General Analysis](#31-general-analysis)
+  - [3.2 Cross-community Analysis](#32-cross-community-analysis)
+- [Natural Language Processing](#natural-language-processing)
+  - [4.1 Seed Set Annotation](#41-seed-set-annotation)
+  - [4.2 BERT Pretraining](#42-bert-pretraining)
+  - [4.3 Fine-Tuning BERT](#43-fine-tuning-bert)
+  - [4.4 Input Encoding](#44-input-encoding)
+  - [4.5 Model Evaluation and Optimization](#45-model-evaluation-and-optimization)
+  - [4.6 Interpretability](#46-interpretability)
+- [Multinomial Naive Bayes](#multinomial-naive-bayes)
+  - [5.1 Feature Extraction](#51-feature-extraction)
+  - [5.2 TF-IDF Weighted Word2Vec](#52-tf-idf-weighted-word2vec)
+  - [5.3 Training and Classification](#53-training-and-classification)
+  - [5.4 Evaluation](#54-evaluation)
+- [Sentiment Analysis](#sentiment-analysis)
+  - [6.1 Sentiment Scoring](#61-sentiment-scoring)
+  - [6.2 Sentiment Visualization](#62-sentiment-visualization)
+- [Suicidal Post Detection](#suicidal-post-detection)
+  - [7.1 Suicidal Ideation Identification](#71-suicidal-ideation-identification)
+- [Evaluation](#evaluation)
+  - [8.1 Model Performance Evaluation](#81-model-performance-evaluation)
+  - [8.2 Active Learning and Manual Review](#82-active-learning-and-manual-review)
+  - [8.3 Community Cross-over Evaluation](#83-community-cross-over-evaluation)
+  - [8.4 Assess Contribution to Clinical Research](#84-assess-contribution-to-clinical-research)
+- [Ethics, Conclusion, and Further Work](#ethics-conclusion-and-further-work)
+  - [9.1 Ethics Consideration](#91-ethics-consideration)
+  - [9.2 Conclusion](#92-conclusion)
+  - [9.3 Further Work](#93-further-work)
 
 ## Data Gathering and Pre-processing
 
@@ -117,3 +154,25 @@ The objective of this project is to conduct an unsupervised study on Reddit data
 ### 8.3 Community Cross-over Evaluation
 - Evaluate the degree of crossover between users in different mental health communities, particularly those identified as posting potentially suicidal content.
 - Gain insights into correlations or patterns among users engaging in multiple subreddits.
+
+### 8.4 Assess Contribution to Clinical Research
+- Analyse the insights extracted from the identification of potential suicidal ideation and the overall analysis of user well-being.
+- Investigate how these insights can contribute to clinical research, informing the development of interventions and support systems for individuals experiencing mental health distress.
+- Assess the potential impact of the project's findings on clinical practices and strategies for user well-being.
+
+## Ethics, Conclusion, and Further Work
+
+### 9.1 Ethics Consideration
+- Address ethical concerns surrounding privacy and the potential misuse of data in the study. Ensure the project contributes positively to mental health awareness and support.
+- Discuss the responsible handling of sensitive data and strike a balance between privacy and the need for research.
+- Evaluate the potential for bias in the models and the implications of potential false positives or negatives in the identification of suicidal posts.
+
+### 9.2 Conclusion
+- Summarise the findings of the study, focusing on the primary outcomes and insights regarding the identification and analysis of suicidal posts in mental health subreddits.
+- Discuss the significance of these findings in the context of mental health support on platforms like Reddit.
+- Reflect on the limitations of the study, highlighting the challenges encountered during data collection, model training, and performance evaluation.
+
+### 9.3 Further Work
+- Propose potential future studies and enhancements to the methodology, including exploring other social media platforms, incorporating user interactions or temporal dynamics, or integrating external data sources for a more accurate identification of suicidal posts.
+- Discuss how the current work could be expanded to include additional mental health topics or to incorporate other linguistic or socio-demographic factors.
+- Suggest potential applications of the study's findings in designing interventions, developing policy, or informing public awareness campaigns.
