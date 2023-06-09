@@ -3,13 +3,19 @@
 **Research Question:** How can natural language processing and machine learning techniques be utilised to identify and analyse potential suicidal ideation in mental health subreddits on Reddit? What insights can be extracted from this analysis to contribute to clinical research on user well-being?
 
 ## Introduction
-The objective of this project is to conduct an unsupervised study on Reddit data from various mental health subreddits. The primary aim is to identify potential suicidal posts using natural language processing techniques, with a specific focus on incorporating BERT (Bidirectional Encoder Representations from Transformers) while also leveraging Word Embeddings, TF-IDF Weighted Word2Vec, and Multinomial Naive Bayes. The models will be further optimized using Optuna Bayesian hyperparameter tuning.
+The exponential growth of online platforms has triggered a parallel increase in the volume of user-generated content, unveiling unique challenges and opportunities for understanding human behavior. This is particularly the case for mental health communities, where the anonymity of the internet allows individuals to share their deepest fears and darkest thoughts. Such candid insights into mental health challenges, while providing invaluable support networks for the individuals involved, also possess the potential to serve as an untapped resource for clinical research and therapeutic intervention.
+
+Therefore, the objective of this project is to conduct an semi-supervised study on Reddit data from various mental health subreddits. The primary aim is to identify potential suicidal posts using natural language processing techniques, with a specific focus on incorporating BERT (Bidirectional Encoder Representations from Transformers) while also leveraging Word Embeddings, TF-IDF Weighted Word2Vec, and Multinomial Naive Bayes. 
+
+To ensure our models' robustness, we will employ Optuna Bayesian hyperparameter tuning, an optimisation method based on Bayesian Optimisation principles. This approach aims to enhance the accuracy and reliability of our models by iteratively refining their hyperparameters.
+
+Through an in-depth examination of posts, assessing their semantics, context, and underlying sentiment, these models may help recognise linguistic patterns that indicate suicidal ideation. This research could yield meaningful implications for clinical research. By identifying trends and patterns related to suicidal ideation in social media discussions, we may contribute valuable insights to the existing body of knowledge on mental health. These insights could inform more responsive and tailored intervention strategies, bolstering our capacity to support individuals facing mental health challenges in the digital age.
 
 ## Table of Contents
 - [Data Gathering and Pre-processing](#data-gathering-and-pre-processing)
   - [1.1 Data Scraping](#11-data-scraping)
   - [1.2 Data Cleaning](#12-data-cleaning)
-- [Database Initialization](#database-initialization)
+- [Database Initialisation](#database-initialisation)
   - [2.1 Gather Connection Details](#21-gather-connection-details)
   - [2.2 Establish a Connection](#22-establish-a-connection)
 - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
@@ -20,7 +26,7 @@ The objective of this project is to conduct an unsupervised study on Reddit data
   - [4.2 BERT Pretraining](#42-bert-pretraining)
   - [4.3 Fine-Tuning BERT](#43-fine-tuning-bert)
   - [4.4 Input Encoding](#44-input-encoding)
-  - [4.5 Model Evaluation and Optimization](#45-model-evaluation-and-optimization)
+  - [4.5 Model Evaluation and Optimisation](#45-model-evaluation-and-optimisation)
   - [4.6 Interpretability](#46-interpretability)
 - [Multinomial Naive Bayes](#multinomial-naive-bayes)
   - [5.1 Feature Extraction](#51-feature-extraction)
@@ -29,7 +35,7 @@ The objective of this project is to conduct an unsupervised study on Reddit data
   - [5.4 Evaluation](#54-evaluation)
 - [Sentiment Analysis](#sentiment-analysis)
   - [6.1 Sentiment Scoring](#61-sentiment-scoring)
-  - [6.2 Sentiment Visualization](#62-sentiment-visualization)
+  - [6.2 Sentiment Visualisation](#62-sentiment-visualisation)
 - [Suicidal Post Detection](#suicidal-post-detection)
   - [7.1 Suicidal Ideation Identification](#71-suicidal-ideation-identification)
 - [Evaluation](#evaluation)
@@ -52,7 +58,7 @@ The objective of this project is to conduct an unsupervised study on Reddit data
 ### 1.2 Data Cleaning
 - Clean the extracted data by removing redundant or unnecessary information, handling missing values, and normalising text (e.g., converting to lowercase, removing punctuation and special characters).
 
-## Database Initialization
+## Database Initialisation
 
 ### 2.1 Gather Connection Details:
 - Obtain the necessary connection details for the PostgreSQL database:
@@ -87,13 +93,13 @@ The objective of this project is to conduct an unsupervised study on Reddit data
 ### 4.3 Fine-Tuning BERT
 - Fine-tune the pretrained BERT model on the task of identifying suicidal posts.
 - Add a classification layer on top of BERT and train the model using the labeled dataset.
-- Use techniques like cross-entropy loss and gradient descent optimization to update the model's weights.
+- Use techniques like cross-entropy loss and gradient descent optimisation to update the model's weights.
 
 ### 4.4 Input Encoding
-- Tokenise the text data using the WordPiece tokenizer or a similar approach.
+- Tokenise the text data using the WordPiece tokeniser or a similar approach.
 - Convert the tokenised input into BERT's input format, including token IDs, attention masks, and segment IDs.
 
-### 4.5 Model Evaluation and Optimization
+### 4.5 Model Evaluation and Optimisation
 - Evaluate the performance of the fine-tuned BERT model on the validation set, calculating metrics such as accuracy, precision, recall, and F1-score.
 - Utilise Optuna Bayesian hyperparameter tuning to search for the optimal set of hyperparameters that maximises the model's performance.
 
@@ -113,7 +119,7 @@ The objective of this project is to conduct an unsupervised study on Reddit data
 
 ### 5.3 Training and Classification
 - Train a Multinomial Naive Bayes classifier on the extracted features.
-- Use Optuna Bayesian hyperparameter tuning to search for the optimal set of hyperparameters that maximizes the classifier's performance. This involves exploring different hyperparameter configurations and evaluating their impact on the classifier's metrics.
+- Use Optuna Bayesian hyperparameter tuning to search for the optimal set of hyperparameters that maximises the classifier's performance. This involves exploring different hyperparameter configurations and evaluating their impact on the classifier's metrics.
 
 ### 5.4 Evaluation
 - Evaluate the performance of the Multinomial Naive Bayes classifier using appropriate metrics such as accuracy, precision, recall, and F1-score. These metrics provide an assessment of the classifier's effectiveness in correctly predicting suicidal posts and non-suicidal posts.
@@ -128,7 +134,7 @@ The objective of this project is to conduct an unsupervised study on Reddit data
 - Perform sentiment analysis on the posts using the VADER (Valence Aware Dictionary and sEntiment Reasoner) sentiment analysis tool.
 - Assign sentiment scores to each post, capturing the overall emotional tone expressed.
 
-### 6.2 Sentiment Visualization
+### 6.2 Sentiment Visualisation
 - Visualise sentiment trends and sentiments associated with specific topics or clusters.
 - Generate word clouds to highlight key words based on their frequency and importance within the dataset.
 - Analyse sentiment patterns to gain insights into the emotional context of posts.
