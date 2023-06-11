@@ -1,6 +1,8 @@
-# Project Outline: Identifying and Understanding Suicidal Posts in Mental Health Subreddits using Natural Language Processing
+# Project Outline: Identifying and Understanding Posts in Mental Health Subreddits using Natural Language Processing
 
 **Research Question:** How can natural language processing and machine learning techniques be utilised to identify and analyse potential suicidal ideation in mental health subreddits on Reddit? What insights can be extracted from this analysis to contribute to clinical research on user well-being?
+
+**Possible Updated Research Question** How can natural language processing and machine learning techniques be utilised to classify and analyse posts in mental health subreddits on Reddit? What insights can be extracted from this multi-faceted analysis to contribute to understanding mental health discussions and potentially aiding clinical research on user well-being?
 
 ## Introduction
 The exponential growth of online platforms has triggered a parallel increase in the volume of user-generated content, unveiling unique challenges and opportunities for understanding human behavior. This is particularly the case for mental health communities, where the anonymity of the internet allows individuals to share their deepest fears and darkest thoughts. Such candid insights into mental health challenges, while providing invaluable support networks for the individuals involved, also possess the potential to serve as an untapped resource for clinical research and therapeutic intervention.
