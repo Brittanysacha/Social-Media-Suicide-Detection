@@ -1,3 +1,5 @@
+# Seed Set Annotation Guidelines
+
 ### Crisis:
 This category represents Reddit posts where the poster is in a state of immediate distress, requiring urgent assistance or intervention. The search criteria for this category could include keywords or phrases indicative of crisis situations, such as:
 - **Suicidal thoughts or self-harm:** "suicide," "self-harm," "suicidal ideation," "want to end my life," etc.
