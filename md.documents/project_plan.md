@@ -1,28 +1,36 @@
 # Project Outline: Identifying and Understanding Posts in Mental Health Subreddits using Natural Language Processing
 
-**Research Question:** How can natural language processing and machine learning techniques be utilised to identify and analyse potential suicidal ideation in mental health subreddits on Reddit? What insights can be extracted from this analysis to contribute to clinical research on user well-being?
-
-**Possible Updated Research Question** How can natural language processing and machine learning techniques be utilised to classify and analyse posts in mental health on Reddit? What insights can be extracted from social media to contribute to understanding mental health discussions and potentially aiding clinical research on user well-being?
+** Research Question** How can natural language processing and machine learning techniques be utilised to classify and analyse posts in mental health on Reddit? What insights can be extracted from social media to contribute to understanding mental health discussions and potentially aiding clinical research on user well-being?
 
 ## Introduction
 The exponential growth of online platforms has triggered a parallel increase in the volume of user-generated content, unveiling unique challenges and opportunities for understanding human behavior. This is particularly the case for mental health communities, where the anonymity of the internet allows individuals to share their deepest fears and darkest thoughts. Such candid insights into mental health challenges, while providing invaluable support networks for the individuals involved, also possess the potential to serve as an untapped resource for clinical research and therapeutic intervention.
 
-Therefore, the objective of this project is to conduct an semi-supervised study on Reddit data from various mental health subreddits. The primary aim is to identify potential suicidal posts using natural language processing techniques, with a specific focus on incorporating BERT (Bidirectional Encoder Representations from Transformers) while also leveraging Word Embeddings, TF-IDF Weighted Word2Vec, and Multinomial Naive Bayes. 
+Therefore, the objective of this project is to conduct an semi-supervised study on Reddit data from various mental health subreddits. The primary aim is to identify potential user-wellbeing based on posts data using natural language processing techniques, with a specific focus on incorporating BERT (Bidirectional Encoder Representations from Transformers). Through an in-depth examination of posts, assessing their semantics, context, and underlying sentiment, a BERT model will be tested to see if it can help recognise linguistic patterns that indicate whether an individual is in crisis, struggling, working on recovery or management, or seeking support or advice. 
 
-To ensure our models' robustness, we will employ Optuna Bayesian hyperparameter tuning, an optimisation method based on Bayesian Optimisation principles. This approach aims to enhance the accuracy and reliability of our models by iteratively refining their hyperparameters.
-
-Through an in-depth examination of posts, assessing their semantics, context, and underlying sentiment, these models may help recognise linguistic patterns that indicate suicidal ideation. This research could yield meaningful implications for clinical research. By identifying trends and patterns related to suicidal ideation in social media discussions, we may contribute valuable insights to the existing body of knowledge on mental health. These insights could inform more responsive and tailored intervention strategies, bolstering our capacity to support individuals facing mental health challenges in the digital age.
+Given that individuals may not always be forthcoming with a doctor or a therapist due to fears of being sectioned, medicated, or for child and youth reported to a parent or guardian. Therefore, this research could yield meaningful implications for clinical research by identifying linguistic patterns or undertones within text that may also be observed in clinical practice and clinical session notes. By identifying trends and patterns related to user-wellbeing in social media discussions, they is further opportunity to help inform more responsive and tailored intervention strategies, bolstering our capacity to support individuals facing mental health challenges in the digital age.
 
 ## Table of Contents
 - [Data Gathering and Pre-processing](#data-gathering-and-pre-processing)
-  - [1.1 Data Scraping](#11-data-scraping)
-  - [1.2 Data Cleaning](#12-data-cleaning)
+  - [1.1 Reddit API connnection - PRAW] 
+  - [2.1 Data Scraping](#11-data-scraping)
+
 - [Database Initialisation](#database-initialisation)
   - [2.1 Gather Connection Details](#21-gather-connection-details)
   - [2.2 Establish a Connection](#22-establish-a-connection)
+
 - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
   - [3.1 General Analysis](#31-general-analysis)
-  - [3.2 Cross-community Analysis](#32-cross-community-analysis)
+  - [3.2 Cross-community Analysis](#32-cross-community-analysis) *********
+
+- [Sentiment Analysis](#sentiment-analysis)
+  - [6.1 Sentiment Scoring](#61-sentiment-scoring)
+  - [6.2 Sentiment Visualisation](#62-sentiment-visualisation)
+
+- [Data Cleaning](#data-cleaning)
+  - [5.1 Spellcheck and Slang Dictionary Creation]
+  - [5.2 Post Normalisation]
+  - [5.3 Tokenisation]
+
 - [Natural Language Processing](#natural-language-processing)
   - [4.1 Seed Set Annotation](#41-seed-set-annotation)
   - [4.2 BERT Pretraining](#42-bert-pretraining)
@@ -30,21 +38,13 @@ Through an in-depth examination of posts, assessing their semantics, context, an
   - [4.4 Input Encoding](#44-input-encoding)
   - [4.5 Model Evaluation and Optimisation](#45-model-evaluation-and-optimisation)
   - [4.6 Interpretability](#46-interpretability)
-- [Multinomial Naive Bayes](#multinomial-naive-bayes)
-  - [5.1 Feature Extraction](#51-feature-extraction)
-  - [5.2 TF-IDF Weighted Word2Vec](#52-tf-idf-weighted-word2vec)
-  - [5.3 Training and Classification](#53-training-and-classification)
-  - [5.4 Evaluation](#54-evaluation)
-- [Sentiment Analysis](#sentiment-analysis)
-  - [6.1 Sentiment Scoring](#61-sentiment-scoring)
-  - [6.2 Sentiment Visualisation](#62-sentiment-visualisation)
-- [Suicidal Post Detection](#suicidal-post-detection)
-  - [7.1 Suicidal Ideation Identification](#71-suicidal-ideation-identification)
+
 - [Evaluation](#evaluation)
   - [8.1 Model Performance Evaluation](#81-model-performance-evaluation)
   - [8.2 Active Learning and Manual Review](#82-active-learning-and-manual-review)
   - [8.3 Community Cross-over Evaluation](#83-community-cross-over-evaluation)
   - [8.4 Assess Contribution to Clinical Research](#84-assess-contribution-to-clinical-research)
+
 - [Ethics, Conclusion, and Further Work](#ethics-conclusion-and-further-work)
   - [9.1 Ethics Consideration](#91-ethics-consideration)
   - [9.2 Conclusion](#92-conclusion)
