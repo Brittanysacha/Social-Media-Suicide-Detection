@@ -1,52 +1,50 @@
 # Seed Set Annotation Guidelines
 
-### Crisis:
-This category represents Reddit posts where the poster is in a state of immediate distress, requiring urgent assistance or intervention. The search criteria for this category could include keywords or phrases indicative of crisis situations, such as:
-- **Suicidal thoughts or self-harm:** Need to actively refer to "suicide," "suicidal ideation," "going to end my life," etc.
-- **Explicit mentions of dangerous or harmful behaviors:** "self-harm methods," "suicide plan," "imminent threat to safety," "want to hurt someone,"  etc.
-- **Emergency situations:** "urgent help needed," "in immediate danger," "emergency situation," etc.
-- **Intense emotional distress:** "overwhelmed," "can't handle it anymore," "breaking down," "panic attacks," "constant worry," "irrational fears," "feeling on edge," etc.
-- **Urgent need for support:** "need help now," "desperate for assistance," "can't cope," etc.
-- **Self-harm as an immediate risk:** Indications of engaging in self-harm with the intention of causing significant harm, expressing a desire to end one's life, or engaging in self-harm methods that pose immediate danger.
-- **Exhibiting Dangerous Symptoms:** "spurting blood," "can't walk,", "severe brusing," "rapid heartbeat," "shortness of breath," etc.
+## Categories
 
+### 1. Immediate Crisis
+This category covers Reddit posts where the poster is experiencing an immediate crisis situation, implying a need for immediate intervention. The identification criteria could include explicit phrases or keywords suggestive of imminent danger or severe distress:
+- **Explicit suicidal ideation or self-harm methods:** Use of phrases such as "I'm going to end my life," "have a suicide plan," "asking for self-harm methods," etc.
+- **Immediate self-harm or harm to others:** References to immediate self-harm or endangering others.
+- **Medical emergencies:** Language indicating severe medical symptoms or immediate health crises, such as "spurting blood," "cannot breathe," "severe pain," etc.
+- **Other emergency situations:** Phrases like "urgent help needed," "immediate danger," "emergency situation," "think i might die," "immediate panic," etc.
 
-### Struggling
-This category encompasses Reddit posts where the poster is going through a difficult time but may not be in immediate crisis. The search criteria for this category could include indicators of struggle, such as:
-- **Personal difficulties or hardships:** "financial struggles," "relationship problems," "job loss," etc.
-- **Emotional turmoil or confusion:** "feeling lost," "confused about life," "emotional breakdown," etc.
-- **Seeking empathy or understanding:** "need someone to talk to," "feeling alone," "seeking comfort," etc.
-- **Discussing possibility of ending life** "contemplating ending it all", "sometimes I want to die"
-- **Include indicators of chronic or ongoing challenges or triggers:** "long-term unemployment," "chronic illness," "persistent loneliness," "public speaking," "flying," "crowded places," "heights," etc.
-- **Consider including specific life events that can cause distress:** "grieving the loss of a loved one," "divorce or separation," "academic pressure," etc.
-- **Self-harm as a coping mechanism:** References to self-harm as a way to cope with emotional pain or manage distress, without immediate indications of significant harm or imminent danger.
+### 2. Mental Distress
+This category comprises Reddit posts that indicate severe, ongoing mental distress, such as feelings of depression, anxiety, or non-immediate suicidal thoughts. Identification criteria may include:
+- **Prolonged emotional distress:** Words and phrases such as "constant worry," "feeling lost," "can't handle it anymore," "panic attacks," etc.
+- **Non-immediate suicidal ideation:** Phrases such as "contemplating ending it all," "sometimes I want to die," etc.
+- **Chronic or persistent distress:** References to persistent loneliness, irrational fears, emotional breakdown, etc.
+- **Self-harm as a coping mechanism:** Posts that mention self-harm as a means of coping with severe emotional distress, such as depression, anxiety, or chronic emotional pain, without expressing immediate suicidal intent
 
-### Recovery/Management
-This category includes Reddit posts where the poster is actively engaged in recovery or managing their situation. The search criteria for this category could include phrases or keywords related to recovery and management efforts, such as:
-- **Coping strategies:** "ways to cope," "managing stress," "establishing a self-care routine," "engaging in hobbies," "managing stress levels," etc.
-- **Progress updates or milestones:** "recovery milestones," "progress report," "steps forward," etc.
-- **Seeking advice for self-improvement:** "advice on self-improvement," "tips for personal growth," "strategies for self-improvement," etc.
-- **Therapy or treatment methods:** "therapy options," "treatment experiences," "medication management," etc.
-- **Expressions of progress or improvement:** "I have overcome," "I have learned," "I have grown," etc.
-- **Personal anecdotes highlighting positive change or improvement:** "I didn't realize I had overcome my struggles," "I experienced a moment of growth," "I made progress without realizing it," etc.
-- **Acknowledging setbacks or relapses:** "expressing frustration over a relapse," "seeking guidance after a setback," "feeling guilty about breaking a promise," etc.
+### 3. Struggle/Challenge
+This category should capture Reddit posts in which the poster discusses ongoing struggles or challenges causing distress. The following elements may serve as identifying features:
+- **Personal difficulties or hardships:** Mentions of "financial struggles," "relationship problems," "job loss," "chronic illness," etc.
+- **Chronic or ongoing triggers:** Discussion of persistent stressors like "long-term unemployment," "persistent loneliness," "public speaking fears," etc.
+- **Specific distressing life events:** Mention of events such as "grieving the loss of a loved one," "divorce or separation," "academic pressure," etc.
+- **Temptation to Self-Harm After Being Clean:** Mention of ongoing struggles with temptation or urges to self-harm after a period of being clean.
 
+### 4. Advice/Support
+This category pertains to Reddit posts where the poster is actively seeking advice, support, or guidance from the community. Identification criteria might include:
+- **Advice or help-seeking:** Phrases like "looking for advice," "need help with," "seeking guidance for," etc.
+- **Resource or information-seeking:** Mentions of "resources on," "information about," etc.
+- **Opinions or perspective-seeking:** Queries such as "what do you think about," "opinions on," "seeking perspectives on," etc.
 
+### 5. Recovery/Management
+This category includes Reddit posts where the poster is actively engaged in recovery or managing their situation. The search criteria can include:
+- **Coping strategies:** Mention of "ways to cope," "managing stress," "establishing a self-care routine," "engaging in hobbies," etc.
+- **Progress updates or milestones:** Use of phrases like "recovery milestones," "progress report," "steps forward," etc.
+- **Seeking advice for self-improvement:** Phrases such as "advice on self-improvement," "tips for personal growth," "strategies for self-improvement," etc.
+- **Therapy or treatment mentions:** References to "therapy options," "treatment experiences," "medication management," etc.
 
-### Advice/Support
-This category pertains to Reddit posts where the poster is seeking advice, support, or guidance from the community. The search criteria for this category could include phrases or keywords indicating a desire for advice or support, such as:
-- **Seeking recommendations or suggestions:** "looking for advice," "seeking suggestions," etc.
-- **Requesting help or assistance:** "need help with," "seeking guidance for," etc.
-- **Looking for resources or information:** "resources on," "information about," etc.
-- **Seeking opinions or perspectives:** "what do you think about," "opinions on," "seeking perspectives on," etc.
+## Guidelines for Ambiguous Cases
 
-### Guidelines for Ambiguous Cases
-There may be instances where certain posts appear to encompass elements that align with multiple categories or do not straightforwardly belong to a particular category. In such instances, the following guidelines should be employed:
-- **Emphasising Urgency:** In the event that a post contains any indications of immediate distress or danger, it should be categorised as a crisis, even if it simultaneously incorporates elements of struggle, recovery/management, or advice/support. The immediate safety and mental wellbeing of the individual is of utmost importance.
-- **Contextual Considerations:** The overall context of the post should be a significant factor. If advice is being sought, but the post contains substantial elements of emotional distress, it may be more appropriate to categorise it under struggling rather than advice/support. Conversely, if there is the expression of emotional turmoil alongside discussions of active coping strategies, categorisation under recovery/management may be more fitting.
-- **Continuous Learning and Adaptation:** As more posts are categorised, a more nuanced understanding of each category will be developed. Re-evaluation of previous categorisations and making necessary adjustments as comprehension evolves is a critical part of the process. The ultimate objective is to accurately and effectively support individuals based on their particular needs - these catergories may be updated during the active learning stage of this project.
-- **Avoiding Assumptions:** Assumptions should not be made about what the poster is experiencing based on limited information. The focus should be on the content of the post and the language utilised by the poster to guide categorisation. In cases where a post is vague and does not provide enough information for an accurate categorisation, it may be advisable to leave it uncategorised or noted for further review once additional information is made available.
+In situations where posts contain elements of multiple categories or are unclear about their categorization, employ the following guidelines:
 
-### Noting Patterns and Trends
-Throughout the categorisation process, it could prove advantageous to keep a record of recurring themes or trends. This could involve noting common expressions or phrases that frequently appear in certain categories, or identifying common characteristics of posts that are often categorised together. Such observations might not only streamline the categorisation process by highlighting patterns, but also provide deeper insights that could contribute to the refinement of the categorisation criteria. This practice advocates for a more adaptive and dynamic approach, improving the overall effectiveness of the project.
+- **Prioritizing Urgency:** If a post implies immediate danger or severe distress, categorize it as an 'Immediate Crisis' regardless of the presence of other elements.
+- **Consider Context:** Evaluate the post's overall context and determine which category the post is more closely aligned with.    
+- **Continuous Learning and Adaptation:** As more posts are categorized, your understanding of each category will evolve. Re-evaluate previous categorizations and adjust as necessary. Remember that your main objective is to support individuals based on their unique needs effectively. Thus, these categories may be updated during the project's active learning stage.
+- **Avoid Assumptions:** Do not make assumptions about what the poster is experiencing based on limited information. Instead, focus on the post's content and the language used by the poster to guide categorization. If a post is vague and does not provide enough information for accurate categorization, it may be best to leave it uncategorized or marked for further review once more information is available.
 
+## Recognizing Patterns and Trends
+
+It might be advantageous to note recurring themes, trends, or common phrases appearing in certain categories throughout the categorization process. This practice might streamline the categorization process by identifying patterns and providing deeper insights, contributing to refining the categorization criteria. It encourages a more adaptive and dynamic approach, enhancing the overall project's effectiveness.
