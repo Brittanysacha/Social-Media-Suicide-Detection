@@ -11,44 +11,45 @@ Given that individuals may not always be forthcoming with a doctor or a therapis
 
 ## Table of Contents
 - [Data Gathering and Pre-processing](#data-gathering-and-pre-processing)
-  - [1.1 Reddit API connnection - PRAW] 
-  - [2.1 Data Scraping](#11-data-scraping)
+  - [1.1 Data Scraping](#1.1-data-scraping)
 
 - [Database Initialisation](#database-initialisation)
-  - [2.1 Gather Connection Details](#21-gather-connection-details)
-  - [2.2 Establish a Connection](#22-establish-a-connection)
+  - [2.1 Gather Connection Details](#2.1-gather-connection-details)
+  - [2.2 Establish a Connection](#2.2-establish-a-connection)
+
+- [Develop Ground Truth](#develop-ground-truth)
+  - [3.1 Develop Annotation Guide](#3.1-develop-annotation-guide)
+  - [3.2 Develop Annotation Widget](#3.2-develop-annotation-widget)
+  - [3.3 Seed Set Annotation](#3.3-seed-set-annotation)
 
 - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
-  - [3.1 General Analysis](#31-general-analysis)
-  - [3.2 Cross-community Analysis](#32-cross-community-analysis) *********
-
-- [Sentiment Analysis](#sentiment-analysis)
-  - [6.1 Sentiment Scoring](#61-sentiment-scoring)
-  - [6.2 Sentiment Visualisation](#62-sentiment-visualisation)
+  - [4.1 General Analysis](#4.1-general-analysis)
 
 - [Data Cleaning](#data-cleaning)
-  - [5.1 Spellcheck and Slang Dictionary Creation]
-  - [5.2 Post Normalisation]
-  - [5.3 Tokenisation]
+  - [5.1 Develop Slang Dictionary](#5.1-develop-slang-dictionary)
+  - [5.2 Data Cleaning](#5.2-data-cleaning)
 
 - [Natural Language Processing](#natural-language-processing)
-  - [4.1 Seed Set Annotation](#41-seed-set-annotation)
-  - [4.2 BERT Pretraining](#42-bert-pretraining)
-  - [4.3 Fine-Tuning BERT](#43-fine-tuning-bert)
-  - [4.4 Input Encoding](#44-input-encoding)
-  - [4.5 Model Evaluation and Optimisation](#45-model-evaluation-and-optimisation)
-  - [4.6 Interpretability](#46-interpretability)
+  - [6.1 BERT Pretraining](#6.1-bert-pretraining)
+  - [6.2 Fine-Tuning BERT](#6.2-fine-tuning-bert)
+  - [6.3 Model Evaluation and Optimisation](#6.3-model-evaluation-and-optimisation)
+  - [6.4 Interpretability](#6.4-interpretability)
+  - [6.5 Evaluation](#6.5-evaluation)
 
-- [Evaluation](#evaluation)
-  - [8.1 Model Performance Evaluation](#81-model-performance-evaluation)
-  - [8.2 Active Learning and Manual Review](#82-active-learning-and-manual-review)
-  - [8.3 Community Cross-over Evaluation](#83-community-cross-over-evaluation)
-  - [8.4 Assess Contribution to Clinical Research](#84-assess-contribution-to-clinical-research)
+- [Sentiment Analysis](#sentiment-analysis)
+  - [7.1 Sentiment Scoring](#7.1-sentiment-scoring)
+  - [7.2 Sentiment Visualisation](#7.2-sentiment-visualisation)
+
+- [Active Learning and Evaluation](#active-learning-and-evaluation)
+  - [8.1 Active Learning and Manual Review](#8.1-active-learning-and-manual-review)
+  - [8.2 Community Cross-over Evaluation](#8.2-community-cross-over-evaluation)
+  - [8.3 Assess Contribution to Clinical Research](#8.3-assess-contribution-to-clinical-research)
 
 - [Ethics, Conclusion, and Further Work](#ethics-conclusion-and-further-work)
-  - [9.1 Ethics Consideration](#91-ethics-consideration)
-  - [9.2 Conclusion](#92-conclusion)
-  - [9.3 Further Work](#93-further-work)
+  - [9.1 Ethics Consideration](#9.1-ethics-consideration)
+  - [9.2 Conclusion](#9.2-conclusion)
+  - [9.3 Further Work](#9.3-further-work)
+
 
 ## Data Gathering and Pre-processing
 
@@ -57,8 +58,6 @@ Given that individuals may not always be forthcoming with a doctor or a therapis
 - Collect posts and associated metadata from the year 2022.
 - Data extraction will be performed for the months of January, April, July, and October to capture diverse user mental states influenced by different seasons.
 
-### 1.2 Data Cleaning
-- Clean the extracted data by removing redundant or unnecessary information, handling missing values, and normalising text (e.g., converting to lowercase, removing punctuation and special characters).
 
 ## Database Initialisation
 
@@ -73,57 +72,54 @@ Given that individuals may not always be forthcoming with a doctor or a therapis
 ### 2.2 Establish a Connection
 - Set up a new connection to the PostgreSQL database using the gathered connection details.
 
+## Develop Ground Truth
+
+### 3.1 Develop annotation guide based on best practices from DSM-5, CAMH, and other sources.
+- Divide data into 5 categories: immediate crisis, mental distress, challenges/struggles, recovery/management, and advice/support.
+- Create guideline for cases where posts are ambiguous, or could fit into more than one category
+
+### 3.2 Develop annotation widget
+- Use ipywidget to create an annotation tool with the 5 class options:immediate crisis, mental distress, challenges/struggles, recovery/management, and advice/support.
+- Set up widget to save directly to CSV.
+
+### 3.3 Seed Set Annotation
+- Manually review a small subset (500 rows) of the scraped data and annotate posts as "suicidal" or "non-suicidal" based on their content.
+- Use the annotated seed set as the initial labeled dataset.
+- Aiming to manually review 5000 per subreddit community (start with 4 communities - allow for 1-2 days for this)
+- Make note of any interesting observations that occur when reading through the annotations.
+
 ## Exploratory Data Analysis (EDA)
 
-### 3.1 General Analysis
+### 4.1 General Analysis
 - Conduct an exploratory analysis of the data, including basic statistics on the number of posts, number of users, most active users, and other relevant features.
 
-### 3.2 Cross-community Analysis
-- Identify users who post in multiple subreddits to assess the degree of crossover in the mental health communities.
+## Data Cleaning
+### 5.1 Develop Slang Dictionary
+- Create a dictionary of clinical and diagnostic acronyms, mental health slang, and shortforms. This is so the model can fully understand what is being said as language models can miss nuance if they do not understand a slang meaning (i.e. kms may look like kilometres to BERT, however, in the mental health subreddit it is referring to kill myself.)
 
-## Natural Language Processing
+### 5.2 Data Cleaning
+- Run spell check on the post data (include the slang dictionary to learned terms)
+ - Clean the extracted data by removing redundant or unnecessary information, handling missing values, and normalising text (e.g., converting to lowercase, removing punctuation and special characters).
 
-### 4.1 Seed Set Annotation
-- Manually review a small subset of the scraped data and annotate posts as "suicidal" or "non-suicidal" based on their content.
-- Use the annotated seed set as the initial labeled dataset.
-- Aiming to manually review 1,000 per subreddit community (start with 4 communities - allow for 1-2 days for this)
+## Develop BERT Model
 
-### 4.2 BERT Pretraining
+### 6.1 BERT Pretraining
 - Leverage a pretrained BERT model (e.g., BERT base or BERT large) as a starting point for the fine-tuning process.
 - Utilise BERT's knowledge of language patterns and semantics.
 
-### 4.3 Fine-Tuning BERT
+### 6.2 Fine-Tuning BERT
 - Fine-tune the pretrained BERT model on the task of identifying suicidal posts.
 - Add a classification layer on top of BERT and train the model using the labeled dataset.
 - Use techniques like cross-entropy loss and gradient descent optimisation to update the model's weights.
 
-### 4.4 Input Encoding
-- Tokenise the text data using the WordPiece tokeniser or a similar approach.
-- Convert the tokenised input into BERT's input format, including token IDs, attention masks, and segment IDs.
-
-### 4.5 Model Evaluation and Optimisation
+### 6.3 Model Evaluation and Optimisation
 - Evaluate the performance of the fine-tuned BERT model on the validation set, calculating metrics such as accuracy, precision, recall, and F1-score.
 - Utilise Optuna Bayesian hyperparameter tuning to search for the optimal set of hyperparameters that maximises the model's performance.
 
-### 4.6 Interpretability
+### 6.4 Interpretability
 - Explore techniques such as attention visualisation or gradient-based methods (e.g., Integrated Gradients) to gain insights into the model's decision-making process.
 
-## Multinomial Naive Bayes
-
-### 5.1 Feature Extraction
-- Extract relevant features from the pre-processed text data, such as bag-of-words representations or TF-IDF features.
-    - Train Word2Vec models on the pre-processed text data to obtain word embeddings.
-    - Map words or phrases from the vocabulary onto vectors of real numbers, enabling numerical representation of the linguistic data.
-
-### 5.2 TF-IDF Weighted Word2Vec
-- Apply TF-IDF (Term Frequency-Inverse Document Frequency) approach coupled with Word2Vec to establish word weights in the document.
-- Compute TF-IDF weighted Word2Vec representations for each post, capturing both word importance and contextual relevance.
-
-### 5.3 Training and Classification
-- Train a Multinomial Naive Bayes classifier on the extracted features.
-- Use Optuna Bayesian hyperparameter tuning to search for the optimal set of hyperparameters that maximises the classifier's performance. This involves exploring different hyperparameter configurations and evaluating their impact on the classifier's metrics.
-
-### 5.4 Evaluation
+### 6.5 Evaluation
 - Evaluate the performance of the Multinomial Naive Bayes classifier using appropriate metrics such as accuracy, precision, recall, and F1-score. These metrics provide an assessment of the classifier's effectiveness in correctly predicting suicidal posts and non-suicidal posts.
 - Calculate accuracy, which measures the overall correctness of the classifier's predictions.
 - Compute precision, which quantifies the proportion of suicidal posts correctly identified out of all posts predicted as suicidal.
@@ -132,38 +128,28 @@ Given that individuals may not always be forthcoming with a doctor or a therapis
 
 ## Sentiment Analysis
 
-### 6.1 Sentiment Scoring
+### 7.1 Sentiment Scoring
 - Perform sentiment analysis on the posts using the VADER (Valence Aware Dictionary and sEntiment Reasoner) sentiment analysis tool.
 - Assign sentiment scores to each post, capturing the overall emotional tone expressed.
 
-### 6.2 Sentiment Visualisation
+### 7.2 Sentiment Visualisation
 - Visualise sentiment trends and sentiments associated with specific topics or clusters.
 - Generate word clouds to highlight key words based on their frequency and importance within the dataset.
 - Analyse sentiment patterns to gain insights into the emotional context of posts.
 
-## Suicidal Post Detection
 
-### 7.1 Suicidal Ideation Identification
-- Integrate the findings from Word Embeddings, TF-IDF Weighted Word2Vec, BERT, Multinomial Naive Bayes, and sentiment analysis to develop a comprehensive system that identifies potential suicidal ideation in posts.
-- Combine insights from these techniques to create a scoring or probability system that quantifies the likelihood of suicidal ideation for each post.
-- Higher scores or probabilities suggest higher-risk posts requiring further examination.
+## Active Learning and Evaluation
 
-## Evaluation
-
-### 8.1 Model Performance Evaluation
-- Evaluate the performance of the developed system for identifying suicidal posts using appropriate metrics such as accuracy, precision, recall, and F1-score.
-- Use a validation or test set to assess the effectiveness of the system.
-
-### 8.2 Active Learning and Manual Review
+### 8.1 Active Learning and Manual Review
 - Implement an active learning approach to improve the accuracy of the model.
 - Manually review and label a small set of posts flagged as potentially suicidal to iteratively train and refine the model.
 - Continuously review and iterate the system based on the uncertain predictions within the dataset.
 
-### 8.3 Community Cross-over Evaluation
+### 8.2 Community Cross-over Evaluation
 - Evaluate the degree of crossover between users in different mental health communities, particularly those identified as posting potentially suicidal content.
 - Gain insights into correlations or patterns among users engaging in multiple subreddits.
 
-### 8.4 Assess Contribution to Clinical Research
+### 8.3 Assess Contribution to Clinical Research
 - Analyse the insights extracted from the identification of potential suicidal ideation and the overall analysis of user well-being.
 - Investigate how these insights can contribute to clinical research, informing the development of interventions and support systems for individuals experiencing mental health distress.
 - Assess the potential impact of the project's findings on clinical practices and strategies for user well-being.
