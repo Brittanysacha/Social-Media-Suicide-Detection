@@ -2,13 +2,6 @@
 
 ** Research Question** How can natural language processing and machine learning techniques be utilised to classify and analyse posts in mental health on Reddit? What insights can be extracted from social media to contribute to understanding mental health discussions and potentially aiding clinical research on user well-being?
 
-## Introduction
-The exponential growth of online platforms has triggered a parallel increase in the volume of user-generated content, unveiling unique challenges and opportunities for understanding human behavior. This is particularly the case for mental health communities, where the anonymity of the internet allows individuals to share their deepest fears and darkest thoughts. Such candid insights into mental health challenges, while providing invaluable support networks for the individuals involved, also possess the potential to serve as an untapped resource for clinical research and therapeutic intervention.
-
-Therefore, the objective of this project is to conduct an semi-supervised study on Reddit data from various mental health subreddits. The primary aim is to identify potential user-wellbeing based on posts data using natural language processing techniques, with a specific focus on incorporating BERT (Bidirectional Encoder Representations from Transformers). Through an in-depth examination of posts, assessing their semantics, context, and underlying sentiment, a BERT model will be tested to see if it can help recognise linguistic patterns that indicate whether an individual is in crisis, struggling, working on recovery or management, or seeking support or advice. 
-
-Given that individuals may not always be forthcoming with a doctor or a therapist due to fears of being sectioned, medicated, or for child and youth reported to a parent or guardian. Therefore, this research could yield meaningful implications for clinical research by identifying linguistic patterns or undertones within text that may also be observed in clinical practice and clinical session notes. By identifying trends and patterns related to user-wellbeing in social media discussions, they is further opportunity to help inform more responsive and tailored intervention strategies, bolstering our capacity to support individuals facing mental health challenges in the digital age.
-
 ## Table of Contents
 - [Data Gathering and Pre-processing](#data-gathering-and-pre-processing)
   - [1.1 Data Scraping](#1.1-data-scraping)
