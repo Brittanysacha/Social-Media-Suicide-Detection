@@ -26,9 +26,7 @@ For this project, BERT has been chosen over other models because of its ability 
 Initial steps in the Model Development Stage involved pulling 3000 rows from four Mental Health Subreddits using PRAW and exporting them to PgAdmin for future use. An annotation guide was created to classify Reddit posts into the aforementioned categories and an ipywidget was developed to manually assign ground truth labels.
 
 ## Data Cleaning and Enhancement
-Data cleaning involved the creation of a
-
- slang dictionary to capture different terms and acronyms frequently used by users in the mental health community. This helps to ensure that language models don't mislabel posts due to a lack of understanding of these terms. 
+Data cleaning involved the creation of a slang dictionary to capture different terms and acronyms frequently used by users in the mental health community. This helps to ensure that language models don't mislabel posts due to a lack of understanding of these terms. 
 
 ## Model Performance
 BERT's performance improved with additional data, indicating a need for more data in the future. Based on current forecasting, it's estimated that approximately 23,300 rows would be needed to achieve 75% accuracy. However, a significant statistic is the confidence predictability report, which states that among the 55% overall accuracy the model is identifying 35% of cases with 95% certainty where individuals are in either immediate crisis or distress, and in need of additional help.
