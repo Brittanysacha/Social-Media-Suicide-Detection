@@ -5,7 +5,11 @@ Leveraging NLP to identify suicidal ideation on social media, extracting insight
 How can natural language processing and machine learning techniques be utilised to classify and analyse posts in mental health on Reddit? What insights can be extracted from social media to contribute to understanding mental health discussions and potentially aiding clinical research on user well-being?
 
 ## Overview
-This project aims to employ natural language processing to scrutinise social media posts concerning mental health to ascertain whether a user is suicidal and in immediate crisis, undergoing mental distress (considering suicide or self harm), experiencing a challenge or struggle (and having difficulties with coping or managing their mental load), working towards recovery or management of their mental health, or seeking advice and support from others. 
+This project intends to utilize natural language processing techniques to develop a patient risk assessment tool, focusing on mental health. The primary objective is to analyze social media posts related to mental health and determine the user's current state, considering categories derived from existing mental health literature.
+
+The tool aims to identify users who may be at risk of suicide and in immediate crisis, individuals undergoing mental distress and contemplating self-harm or suicide, those facing challenges or struggles and struggling to cope with their mental load, individuals working towards recovery or managing their mental health, and those seeking advice and support from others.
+
+By leveraging insights from mental health literature, this project seeks to transform social media posts into valuable indicators of an individual's mental well-being, enabling timely interventions and support for those in need.
 
 ## Subreddit Selection
 The chosen subreddits cover a wide array of mental health conditions, from anxiety and depression to more specific conditions like bipolar disorder, schizophrenia, and eating disorders. This broad selection enables a comprehensive examination of language patterns associated with diverse mental health experiences. Moreover, these subreddits are renowned for their active communities and open discussions about personal struggles, making them valuable sources of authentic, self-reported data on mental health, including instances of suicidal ideation.
